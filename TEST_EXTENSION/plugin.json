@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "name": "TEST",
+    "author": "vBook",
+    "version": 1,
+    "source": "https://example.com",
+    "regexp": ".*",
+    "description": "Extension test",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "novel",
+    "encrypt": true
+  },
+  "script": {
+    "home": "home.js"
+  }
+}

@@ -36,6 +36,17 @@
       "description": "Đọc truyện trên trang Truyện CV (extension gốc)",
       "type": "novel",
       "locale": "vi_VN"
+    },
+    {
+      "name": "TEST",
+      "author": "vBook",
+      "path": "https://github.com/hoang0109/vbook-extensions/raw/refs/heads/master/TEST_EXTENSION/plugin.zip",
+      "version": 1,
+      "source": "https://example.com",
+      "icon": "https://raw.githubusercontent.com/hoang0109/vbook-extensions/refs/heads/master/TEST_EXTENSION/icon.png",
+      "description": "Extension test đơn giản",
+      "type": "novel",
+      "locale": "vi_VN"
     }
   ]
 }
