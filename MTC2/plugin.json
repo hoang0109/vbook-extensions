@@ -4,6 +4,7 @@
     "author": "vBook",
     "version": 1,
     "source": "https://metruyencv.com",
+    "icon": "icon.png",
     "regexp": "(www.)?(metruyenchu|mtccv|metruyencv).[a-z]+/truyen/[a-zA-Z0-9-]+/?$",
     "description": "Đọc truyện trên trang Mê Truyện CV (bản cập nhật ổn định hơn)",
     "locale": "vi_VN",
