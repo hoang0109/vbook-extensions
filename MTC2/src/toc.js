@@ -59,9 +59,8 @@ function execute(url) {
 
     const chapters = [];
     let page = 1;
-    let hasNext = true;
 
-    while (hasNext) {
+    for (let i = 0; i < 100; i++) {
         const tocUrl = BASE_API + "/api/chapters";
         const resp = fetch(tocUrl, {
             headers: { "X-App": "MeTruyenChu" },
@@ -75,7 +74,7 @@ function execute(url) {
 
         if (!resp.ok) break;
         const data = resp.json();
-        if (!data || !data.data) break;
+        if (!data || !data.data || data.data.length === 0) break;
 
         data.data.forEach(chapter => {
             chapters.push({
@@ -88,9 +87,8 @@ function execute(url) {
 
         if (data.pagination && data.pagination.next) {
             page = data.pagination.next;
-            hasNext = true;
         } else {
-            hasNext = false;
+            break;
         }
     }
 

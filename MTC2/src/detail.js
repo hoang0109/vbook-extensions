@@ -1,7 +1,7 @@
 load("config.js");
 
 function execute(url) {
-    url = url.replace(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/img, BASE_URL);
+    url = normalizeLink(url);
     let response = fetch(url, {
         headers: {
             'user-agent': UserAgent.android()
