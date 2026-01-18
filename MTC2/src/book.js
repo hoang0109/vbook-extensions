@@ -11,13 +11,13 @@ function execute(url, page) {
     if (response.ok) {
         let json = response.json();
         let novelList = [];
-        let next = json.pagination.next + "";
+        let next = json.pagination && json.pagination.next ? json.pagination.next + "" : null;
         json.data.forEach(book => {
             novelList.push({
                 name: book.name,
                 link: book.link,
-                description: book.author.name,
-                cover: book.poster['default'],
+                description: book.author && book.author.name ? book.author.name : "Không rõ",
+                cover: book.poster && book.poster['default'] ? book.poster['default'] : "",
                 host: BASE_URL
             })
         });

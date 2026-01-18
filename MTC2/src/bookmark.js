@@ -14,12 +14,12 @@ function execute(url, page) {
     if (response.ok) {
         let json = response.json();
         let novelList = [];
-        let next = json.pagination.next + "";
+        let next = json.pagination && json.pagination.next ? json.pagination.next + "" : null;
         json.data.forEach(e => {
             novelList.push({
                 name: e.book.name,
                 link: e.book.link,
-                cover: e.book.poster['default'],
+                cover: e.book.poster && e.book.poster['default'] ? e.book.poster['default'] : "",
                 host: BASE_URL
             })
         });

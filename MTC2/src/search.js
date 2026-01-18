@@ -21,8 +21,8 @@ function execute(key, page) {
             novelList.push({
                 name: book.name,
                 link: book.link,
-                description: book.author.name,
-                cover: book.poster['default'],
+                description: book.author && book.author.name ? book.author.name : "Không rõ",
+                cover: book.poster && book.poster['default'] ? book.poster['default'] : "",
                 host: BASE_URL
             })
         });
