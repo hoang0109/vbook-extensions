@@ -7,11 +7,11 @@
     {
       "name": "MTC2",
       "author": "vBook",
-      "path": "https://github.com/hoang0109/vbook-extensions/raw/refs/heads/master/MTC2/plugin.zip",
-      "version": 5,
+      "path": "https://github.com/hoang0109/vbook-extensions/raw/refs/heads/master/MTC3/plugin.zip",
+      "version": 44,
       "source": "https://metruyencv.biz",
-      "icon": "https://raw.githubusercontent.com/hoang0109/vbook-extensions/refs/heads/master/MTC2/icon.png",
-      "description": "Đọc truyện trên Mê Truyện CV (bản cập nhật ổn định hơn)",
+      "icon": "https://raw.githubusercontent.com/hoang0109/vbook-extensions/refs/heads/master/MTC3/icon.png",
+      "description": "Đọc truyện trên Mê Truyện CV (bản ổn định)",
       "type": "novel",
       "locale": "vi_VN"
     },
