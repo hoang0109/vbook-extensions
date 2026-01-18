@@ -25,6 +25,17 @@
       "description": "Đọc truyện trên Mê Truyện CV (bản gốc test)",
       "type": "novel",
       "locale": "vi_VN"
+    },
+    {
+      "name": "TRUYEN_CV",
+      "author": "vBook",
+      "path": "https://github.com/hoang0109/vbook-extensions/raw/refs/heads/master/TRUYEN_CV/plugin.zip",
+      "version": 1,
+      "source": "https://metruyencv.com",
+      "icon": "https://raw.githubusercontent.com/hoang0109/vbook-extensions/refs/heads/master/TRUYEN_CV/icon.png",
+      "description": "Đọc truyện trên trang Truyện CV (extension gốc)",
+      "type": "novel",
+      "locale": "vi_VN"
     }
   ]
 }
