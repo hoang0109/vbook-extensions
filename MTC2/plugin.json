@@ -2,8 +2,8 @@
   "metadata": {
     "name": "MTC2",
     "author": "vBook",
-    "version": 1,
-    "source": "https://metruyencv.com",
+    "version": 2,
+    "source": "https://metruyencv.biz",
     "icon": "icon.png",
     "regexp": "(www.)?(metruyenchu|mtccv|metruyencv).[a-z]+/truyen/[a-zA-Z0-9-]+/?$",
     "description": "Đọc truyện trên trang Mê Truyện CV (bản cập nhật ổn định hơn)",
