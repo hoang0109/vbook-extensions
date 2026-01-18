@@ -5,17 +5,6 @@
   },
   "data": [
     {
-      "name": "MTC2",
-      "author": "vBook",
-      "path": "https://github.com/hoang0109/vbook-extensions/raw/refs/heads/master/MTC3/plugin.zip",
-      "version": 44,
-      "source": "https://metruyencv.biz",
-      "icon": "https://raw.githubusercontent.com/hoang0109/vbook-extensions/refs/heads/master/MTC3/icon.png",
-      "description": "Đọc truyện trên Mê Truyện CV (bản ổn định)",
-      "type": "novel",
-      "locale": "vi_VN"
-    },
-    {
       "name": "MTC3",
       "author": "vBook",
       "path": "https://github.com/hoang0109/vbook-extensions/raw/refs/heads/master/MTC3/plugin.zip",
@@ -23,28 +12,6 @@
       "source": "https://metruyencv.biz",
       "icon": "https://raw.githubusercontent.com/hoang0109/vbook-extensions/refs/heads/master/MTC3/icon.png",
       "description": "Đọc truyện trên Mê Truyện CV (bản gốc test)",
-      "type": "novel",
-      "locale": "vi_VN"
-    },
-    {
-      "name": "TRUYEN_CV",
-      "author": "vBook",
-      "path": "https://github.com/hoang0109/vbook-extensions/raw/refs/heads/master/TRUYEN_CV/plugin.zip",
-      "version": 1,
-      "source": "https://metruyencv.com",
-      "icon": "https://raw.githubusercontent.com/hoang0109/vbook-extensions/refs/heads/master/TRUYEN_CV/icon.png",
-      "description": "Đọc truyện trên trang Truyện CV (extension gốc)",
-      "type": "novel",
-      "locale": "vi_VN"
-    },
-    {
-      "name": "TEST",
-      "author": "vBook",
-      "path": "https://github.com/hoang0109/vbook-extensions/raw/refs/heads/master/TEST_EXTENSION/plugin.zip",
-      "version": 1,
-      "source": "https://example.com",
-      "icon": "https://raw.githubusercontent.com/hoang0109/vbook-extensions/refs/heads/master/TEST_EXTENSION/icon.png",
-      "description": "Extension test đơn giản",
       "type": "novel",
       "locale": "vi_VN"
     }
