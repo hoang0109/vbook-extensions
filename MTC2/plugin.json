@@ -2,7 +2,7 @@
   "metadata": {
     "name": "MTC2",
     "author": "vBook",
-    "version": 44,
+    "version": 45,
     "source": "https://metruyencv.biz",
     "icon": "icon.png",
     "regexp": "(www.)?(metruyenchu|mtccv|metruyencv).[a-z]+/truyen/[a-zA-Z0-9-]+/?$",
