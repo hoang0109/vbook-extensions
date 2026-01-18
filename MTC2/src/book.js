@@ -14,10 +14,10 @@ function execute(url, page) {
         const next = json.pagination && json.pagination.next ? (json.pagination.next + "") : "";
         json.data.forEach(book => {
             novelList.push({
-                name: book.name,
+                name: book.name || "N/A",
                 link: normalizeLink(book.link),
-                description: book.author.name,
-                cover: book.poster['default'],
+                description: book.author && book.author.name ? book.author.name : "",
+                cover: book.poster && book.poster['default'] ? book.poster['default'] : null,
                 host: BASE_URL
             })
         });

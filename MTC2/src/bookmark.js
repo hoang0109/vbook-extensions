@@ -31,9 +31,9 @@ function execute(url, page) {
         const next = json.pagination && json.pagination.next ? (json.pagination.next + "") : "";
         json.data.forEach(e => {
             novelList.push({
-                name: e.book.name,
-                link: normalizeLink(e.book.link),
-                cover: e.book.poster['default'],
+                name: e.book && e.book.name ? e.book.name : "N/A",
+                link: e.book && e.book.link ? normalizeLink(e.book.link) : "#",
+                cover: e.book && e.book.poster && e.book.poster['default'] ? e.book.poster['default'] : null,
                 host: BASE_URL
             })
         });
