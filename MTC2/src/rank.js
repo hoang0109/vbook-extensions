@@ -1,23 +1,23 @@
 load("config.js");
 function execute(url, page) {
     if (!page) page = '1';
-    const tocUrl = BASE_API + url + "&limit=20&page=" + page;
+    let tocUrl = BASE_URL2.replace("https://", "https://backend.") + url + "&limit=20&page=" + page;
 
-    const response = fetch(tocUrl, {
+    let response = fetch(tocUrl, {
         headers: {
             "X-App": "MeTruyenChu"
         },
     });
     if (response.ok) {
-        const json = response.json();
-        const novelList = [];
-        const next = json.pagination && json.pagination.next ? (json.pagination.next + "") : "";
+        let json = response.json();
+        let novelList = [];
+        let next = json.pagination.next + "";
         json.data.forEach(book => {
             novelList.push({
-                name: book.book && book.book.name ? book.book.name : "N/A",
-                link: book.book && book.book.link ? normalizeLink(book.book.link) : "#",
-                description: book.book && book.book.author && book.book.author.name ? book.book.author.name : "",
-                cover: book.book && book.book.poster && book.book.poster['default'] ? book.book.poster['default'] : null,
+                name: book.book.name,
+                link: book.book.link,
+                description: book.book.author.name,
+                cover: book.book.poster['default'],
                 host: BASE_URL
             })
         });

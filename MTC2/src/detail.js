@@ -1,63 +1,45 @@
 load("config.js");
 
 function execute(url) {
-    url = normalizeLink(url);
-    
-    const response = fetch(url, {
+    url = url.replace(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/img, BASE_URL);
+    let response = fetch(url, {
         headers: {
-            'user-agent': UserAgent.android(),
-            'referer': url
+            'user-agent': UserAgent.android()
         }
     });
 
-    if (!response.ok) {
-        return null;
-    }
-
-    const doc = response.html();
-    
-    // Bảo vệ: nếu không lấy được dữ liệu, trả error
-    const nameNode = doc.select("h1 a.text-lg.text-title").first();
-    if (!nameNode) {
-        return Response.error("Không tìm thấy truyện. Có thể trang bị lỗi hoặc URL không hợp lệ");
-    }
-
-    let genres = [];
-    doc.select("a[href*=danh-sach].inline-flex").forEach(e => {
-        genres.push({
-            title: e.text(),
-            input: e.attr("href"),
-            script: "gen.js"
+    if (response.ok) {
+        let doc = response.html();
+        let genres = [];
+        doc.select("a[href*=danh-sach].inline-flex").forEach(e => {
+            genres.push({
+                title: e.text(),
+                input: e.attr("href"),
+                script: "gen.js"
+            });
         });
-    });
-
-    let info = "";
-    const tocBtn = doc.select("button[data-x-bind*=toc]").first();
-    if (tocBtn) {
-        const chapCount = tocBtn.select(".rounded-full").first();
-        if (chapCount) {
-            info = chapCount.text() + " chương";
-        }
+ 
+        let info = doc.select("button[data-x-bind*=toc]").first().select(".rounded-full").text() +" chương";
+        doc.select("div.justify-center.mb-6.text-title > div").forEach(e => {
+            info += "<br>" + e.select("div > div").first().text() + " " + e.select("div > div").last().text();
+        })
+        return Response.success({
+            name: doc.select("h1 a.text-lg.text-title").text(),
+            cover: doc.select("img.shadow-lg").first().attr("src"),
+            host: BASE_URL,
+            author: doc.select("a[href*=tac-gia]").first().text(),
+            description: doc.select("#synopsis .text-base").html(),
+            detail: info,
+            ongoing: doc.select("a[href*=danh-sach]").text().indexOf("Còn tiếp") >= 0,
+            suggests: [
+                {
+                    title: "Cùng đăng",
+                    input: doc.select("a[href*=ho-so]").attr("href"),
+                    script: "recents.js"
+                }
+            ],
+            genres: genres,
+        });
     }
-    
-    doc.select("div.justify-center.mb-6.text-title > div").forEach(e => {
-        const key = e.select("div > div").first();
-        const val = e.select("div > div").last();
-        if (key && val) {
-            info += "<br>" + key.text() + " " + val.text();
-        }
-    });
-
-    const authorNode = doc.select("a[href*=tac-gia]").first();
-    const descNode = doc.select("#synopsis .text-base").first();
-
-    return Response.success({
-        name: nameNode.text(),
-        cover: doc.select("img.shadow-lg").first()?.attr("src") || null,
-        host: BASE_URL,
-        author: authorNode ? authorNode.text() : "",
-        description: descNode ? descNode.html() : "",
-        detail: info,
-        ongoing: doc.select("a[href*=danh-sach]").text().indexOf("Còn tiếp") >= 0,
-        genres: genres
-    });
+    return null;
+}

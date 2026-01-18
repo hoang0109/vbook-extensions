@@ -1,5 +1,3 @@
-load("config.js");
-
 function execute() {
     let currentYear = new Date().getFullYear();
     let currentMonth = new Date().getMonth() + 1;
