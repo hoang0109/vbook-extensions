@@ -5,7 +5,7 @@ function execute() {
         {
             title: "Truyện chọn lọc",
             script: "book.js",
-            input: "/api/books?filter%5Bgender%5D=1&filter%5Bkind%5D=1&filter%5Bstate%5D=published&filter%5Btype%5D=picked&include=author%2Cgenres%2Ccreator&sort=-new_chap_at&limit=5"
+            input: "/api/books?filter%5Bgender%5D=1&filter%5Bkind%5D=1&filter%5Bstate%5D=published&filter%5Btype%5D=picked&include=author%2Cgenres%2Ccreator&sort=-new_chap_at"
         },
         {
             title: "Truyện đã bookmark",
@@ -20,7 +20,7 @@ function execute() {
         {
             title: "Bảng xếp hạng đề cử",
             script: "rank.js",
-            input: "/api/books/ranking?gender=1&kind=1&month=" + currentMonth + "&type=vote&year=" + currentYear + "&limit=5"
+            input: "/api/books/ranking?gender=1&kind=1&month=" + currentMonth + "&type=vote&year=" + currentYear
         },
         {
             title: "Truyện mới cập nhật",
@@ -30,7 +30,7 @@ function execute() {
         {
             title: "Truyện hoàn thành full",
             script: "book.js",
-            input: "/api/books?filter%5Bgender%5D=1&filter%5Bkind%5D=1&filter%5Bstate%5D=published&filter%5Bstatus%5D=2&include=author%2Cgenres%2Ccreator&sort=-new_chap_at&limit=5"
+            input: "/api/books?filter%5Bgender%5D=1&filter%5Bkind%5D=1&filter%5Bstate%5D=published&filter%5Bstatus%5D=2&include=author%2Cgenres%2Ccreator&sort=-new_chap_at"
         },
     ]);
 }

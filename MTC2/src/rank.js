@@ -1,7 +1,8 @@
 load("config.js");
 function execute(url, page) {
     if (!page) page = '1';
-    let tocUrl = BASE_URL2.replace("https://", "https://backend.") + url + "&limit=20&page=" + page;
+    let limitParam = url.includes('limit=') ? '' : '&limit=20';
+    let tocUrl = BASE_URL2.replace("https://", "https://backend.") + url + limitParam + "&page=" + page;
 
     let response = fetch(tocUrl, {
         headers: {
