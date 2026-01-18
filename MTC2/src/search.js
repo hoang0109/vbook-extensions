@@ -16,7 +16,7 @@ function execute(key, page) {
     if (response.ok) {
         let json = response.json();
         let novelList = [];
-        let next = json.pagination && json.pagination.next ? json.pagination.next + "" : null;
+        let next = json.pagination.next + "";
         json.data.forEach(book => {
             novelList.push({
                 name: book.name,
